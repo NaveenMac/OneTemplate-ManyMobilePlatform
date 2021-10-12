@@ -1,0 +1,6 @@
+[submodule "OneTemplate-iOSApp"]
+	path = OneTemplate-iOSApp
+	url = https://github.com/NaveenMac/OneTemplate-iOSApp.git
+[submodule "OneTemplate-AndroidApp"]
+	path = OneTemplate-AndroidApp
+	url = https://github.com/NaveenMac/OneTemplate-AndroidApp.git
