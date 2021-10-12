@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html ng-app="DigiLockerApp" >
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="shortcut icon" href="assets/favicon.ico">
+        <title>DigiLocker</title>
+        <link rel="stylesheet" href="../../bootstrap.css">
+            <link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css">
+        <script type="text/javascript" language="javascript" src="./common/config.js"></script>
+        <script type="text/javascript" language="javascript" src="./common/helper.js"></script>
+        <script type="text/javascript" language="javascript" src="../../jquery.js"></script>
+        
+        <script type="text/javascript" language="javascript" src="../../data/profile/profile.js"></script>
+        <script type="text/javascript" language="javascript" src="../../data/profile/nominee.js"></script>
+        
+        
+        <script type="text/javascript" language="javascript" src="./js/profileview.js"></script>
+        
+        <style>
+            .card, .card-header,.list-group-item {
+                background-color:transparent;
+                border:0;
+               
+            }
+        
+        .list-group-item strong{
+           
+            font-size:17px;
+            
+        }
+        .card-header{
+           padding: .5rem .85rem;
+        }
+        .custom-select{
+            border: none;
+            padding: .375rem 0rem;
+        }
+        .form-control:disabled{
+            background-color: #eaecf405;
+            color:#000 !important;
+            opacity: 1;
+        }
+        
+        input[type=text]:disabled{
+            background-color: #eaecf405;
+            color:#000 !important;
+            opacity: 1;
+        }
+        input[type=text]:read-only{
+            background-color: #eaecf405;
+            
+        }
+        
+        
+        .custom-select:disabled {
+            color: #000000;
+            background-color: #eaecf400;
+        }
+        
+        .custom-select:active{
+            border:none;
+        }
+        .list-group-item{
+            color:#000;
+            
+            border-bottom: 1px solid #00000069;
+            padding: .5rem .85rem;
+        }
+        .form-control{
+            border: none;
+            padding: .375rem 0rem;
+            color: #000;
+        }
+        
+        .active{
+            border: none;
+            padding: .375rem 0rem;
+            color: #000000;
+        }
+        body{
+<!--            background-color: #eeeeee!important-->
+            background-color:#FFF;
+        }
+        input{
+            color:#000;
+        }
+        .form-control:focus {
+            
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px rgba(255, 100, 255, 0.5);
+            color:#000 !important;
+        }
+        
+        .form-control:active {
+            
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px rgba(255, 100, 255, 0.5);
+            color:#000 !important;
+        }
+        
+        
+        .custom-select:focus {
+         
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.075) inset, 0px 0px 0px rgba(255, 100, 255, 0.5);
+            color:#000 ;
+        }
+        .purple{
+            background-color:#6F3DEF;
+            color: #FFF;
+        }
+        .custom-select.is-invalid, .form-control.is-invalid,was-validated .custom-select:invalid,.form-control:invalid {
+             border:none;
+            padding-right: 0px;
+             background: none;
+        }
+        .action-error{
+            width: 100%;
+            margin-top: .25rem;
+            font-size: 80%;
+            color: #e74a3b;
+        }
+        .red{
+            color:#ff0000;
+        }
+        .custom-select {
+           background: none;
+        }
+        .loading-img {
+            height: 0; width: 0; padding: 15px; border: 3px solid #536dfe1f;
+            border-right-color: #536DFE; border-radius: 22px; -webkit-animation: rotate 1s infinite linear;
+            position: absolute; left: 50%!important; top: 261px !important; margin-left: -15px;
+            <!--margin-top: -15px;-->
+        }
+        @-webkit-keyframes rotate {100% { -webkit-transform: rotate(360deg);}}
+        
+        // input date style
+        
+        input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+          color: #fff;
+          position: relative;
+        }
+
+        input[type="date"]::-webkit-datetime-edit-year-field{
+          position: absolute !important;
+          border-left:1px solid #8c8c8c;
+          padding: 2px;
+          color:#000;
+          left: 56px;
+        }
+
+        input[type="date"]::-webkit-datetime-edit-month-field{
+          position: absolute !important;
+          border-left:1px solid #8c8c8c;
+          padding: 2px;
+          color:#000;
+          left: 26px;
+        }
+
+
+        input[type="date"]::-webkit-datetime-edit-day-field{
+          position: absolute !important;
+          color:#000;
+          padding: 2px;
+          left: 4px;
+          
+        }
+        // input date style
+        
+        .dob{
+            background-image: url("../../calendar.png");
+        }
+        
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color:    #000;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+           color:    #000;
+           opacity:  1;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+           color:    #000;
+           opacity:  1;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+           color:    #000;
+        }
+        ::-ms-input-placeholder { /* Microsoft Edge */
+           color:    #000;
+        }
+
+        ::placeholder { /* Most modern browsers support this now. */
+           color:    #000;
+        }
+        
+        input:focus {
+          color: #000;
+        }
+        
+        .round-btn{
+            background-color:#6849F6;
+            border-radius: 50%;
+            color:#FFF;
+            width: 35px;
+            height: 35px;
+            margin-left: 10px;
+        }
+        
+        .card-title {
+            color:#6849F6;
+        }
+        .header-text{
+            color:#6849F6;
+        }
+        
+        .card-subtitle{
+            color:#6849F6;
+        }
+        
+        .light-gray{
+            color:#C0C0C0;
+        }
+        
+        .form-check{
+            margin-right: 12px;
+        }
+        .form-control[readonly]{
+            background-color:#FFF;
+            opacity:1;
+        }
+        </style>
+    </head>
+    <body >
+        <!-- Nav Start -->
+
+        <div id="wrapper"  >
+            <div class="container-fluid p-0">
+                <div class="col">
+                    <div ng-view>
+                        <div ng-controller="profileCtlr">
+                            <div class="row">
+                                <div class="col-lg-12 col-xl-12" data-content="user-account-details">
+                                    <div class="loading-img"></div>
+
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br></br></br>
+        <script id="single-card" type="text/x-handlebars-template">
+            <div class="card" data-container="personal">
+                                        <div class="card-header d-flex justify-content-between align-items-center" data-content="header">
+                                            <div class="card-body" style="padding:0px;">
+                                                <div class="card-title"><h6 class="header-text font-weight-bold m-0" style="font-size:17px;"></h6></div>
+                                                <div class="card-subtitle"></div>
+                                            </div>
+                                            
+                                            <div class="dropdown no-arrow">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-0 ">
+                                            <ul class="list-group list-group-flush " data-content="details">
+
+                                            </ul>
+
+
+                                        </div>
+                                    </div>
+        </script>
+        
+        
+    </body>
+
+</html>

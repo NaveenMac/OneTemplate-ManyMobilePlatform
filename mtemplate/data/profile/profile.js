@@ -1,0 +1,1 @@
+var personalDetailObject ={"full_name":"Text User","dateOfBirth":"2021-10-09T00:00:00.000000Z","user_name":"testuser1","isAadhaarSeeded":"N","user_alias":"testuser1","isAccountVerified":"Y","user_type":"non-aadhaar","gender":"M","mobile":"9191919191"}
