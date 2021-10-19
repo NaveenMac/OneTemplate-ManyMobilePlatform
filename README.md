@@ -8,5 +8,5 @@ When server/firebase notify for any template version changes, we update only the
 
 If you face any difficulty to implement this, you can freely ask your issues here.
 
-##High Level Diagram
+## High Level Diagram
 <img width="1042" alt="preview" src="https://user-images.githubusercontent.com/20537121/137860442-c9bd2720-5748-4e85-b637-bdbcb945cddd.png">
