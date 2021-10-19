@@ -8,4 +8,5 @@ When server/firebase notify for any template version changes, we update only the
 
 If you face any difficulty to implement this, you can freely ask your issues here.
 
-<img width="1004" alt="OneTemplate-Architecture copy" src="https://user-images.githubusercontent.com/20537121/137859382-181c5ff2-2cd6-4375-b800-8892dc7b5d78.png">
+
+<img width="1042" alt="preview" src="https://user-images.githubusercontent.com/20537121/137860442-c9bd2720-5748-4e85-b637-bdbcb945cddd.png">
